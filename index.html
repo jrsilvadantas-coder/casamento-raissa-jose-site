@@ -6,6 +6,24 @@
   <title>Raíssa & José Roberto</title>
 
   <style>
+    body::before {
+  content: "♡ ♡ ♡ ♡ ♡";
+  position: fixed;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 28px;
+  color: rgba(180, 83, 9, 0.18);
+  animation: floatHearts 6s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes floatHearts {
+  0% { transform: translateY(0); opacity: .4; }
+  50% { transform: translateY(18px); opacity: .8; }
+  100% { transform: translateY(0); opacity: .4; }
+}
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -135,6 +153,11 @@
 
       <div style="padding:32px;">
         <p style="color:#b45309;letter-spacing:4px;font-weight:bold;">01 • 08 • 2026</p>
+        <div id="countdown" style="margin:18px 0;font-size:20px;font-weight:bold;color:#b45309;"></div>
+
+<button onclick="shareWhatsApp()" style="margin-right:10px;">
+  Compartilhar no WhatsApp
+</button>
         <h1>Raíssa & José Roberto</h1>
 
         <p style="font-size:18px;line-height:1.7;color:#475569;">
@@ -178,10 +201,56 @@
 
     <h2>Lista de presentes divertida</h2>
     <section id="gifts" class="section-grid"></section>
+    <h2>Deixe uma mensagem para os noivos</h2>
+
+<section style="background:white;padding:24px;border-radius:24px;box-shadow:0 5px 18px rgba(0,0,0,.06);">
+  <textarea
+    id="guestMessage"
+    placeholder="Escreva uma mensagem carinhosa para Raíssa e José Roberto..."
+    style="width:100%;height:120px;border-radius:16px;border:1px solid #cbd5e1;padding:14px;font-family:Arial;font-size:16px;"
+  ></textarea>
+
+  <button onclick="saveMessage()" style="margin-top:12px;">
+    Enviar mensagem
+  </button>
+
+  <p id="savedMessage" style="color:#b45309;font-weight:bold;"></p>
+</section>
   </main>
 
   <script>
     const pix = '19992532242'
+    const weddingDate = new Date('2026-08-01T00:00:00')
+
+function updateCountdown() {
+  const now = new Date()
+  const diff = weddingDate - now
+
+  const days = Math.max(0, Math.floor(diff / (1000 * 60 * 60 * 24)))
+  const hours = Math.max(0, Math.floor((diff / (1000 * 60 * 60)) % 24))
+  const minutes = Math.max(0, Math.floor((diff / (1000 * 60)) % 60))
+
+  document.getElementById('countdown').innerHTML =
+    `${days} dias • ${hours} horas • ${minutes} minutos`
+}
+
+setInterval(updateCountdown, 1000)
+updateCountdown()
+
+function shareWhatsApp() {
+  const text = encodeURIComponent('Veja o site de casamento da Raíssa e José Roberto 💍')
+  const url = encodeURIComponent(window.location.href)
+  window.open(`https://wa.me/?text=${text}%20${url}`, '_blank')
+}
+
+function saveMessage() {
+  const message = document.getElementById('guestMessage').value
+  if (!message.trim()) return alert('Escreva uma mensagem antes de enviar.')
+
+  localStorage.setItem('guestMessage', message)
+  document.getElementById('savedMessage').innerText = 'Mensagem salva com carinho 💛'
+  document.getElementById('guestMessage').value = ''
+}
 
     const gifts = [
       ['Café para sobreviver aos primeiros dias', 'R$ 20', 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80'],
