@@ -245,11 +245,17 @@ function shareWhatsApp() {
 
 function saveMessage() {
   const message = document.getElementById('guestMessage').value
-  if (!message.trim()) return alert('Escreva uma mensagem antes de enviar.')
 
-  localStorage.setItem('guestMessage', message)
-  document.getElementById('savedMessage').innerText = 'Mensagem salva com carinho 💛'
-  document.getElementById('guestMessage').value = ''
+  if (!message.trim()) {
+    alert('Escreva uma mensagem antes de enviar.')
+    return
+  }
+
+  const text = encodeURIComponent(
+    `Mensagem para Raíssa e José Roberto 💛\n\n${message}`
+  )
+
+  window.open(`https://wa.me/5519992532242?text=${text}`, '_blank')
 }
 
     const gifts = [
