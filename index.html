@@ -216,47 +216,38 @@
   </main>
 
   <script>
-    const pix = '19992532242'
-    const weddingDate = new Date('2026-08-01T00:00:00')
+  const pix = '19992532242'
+  const weddingDate = new Date('2026-08-01T00:00:00')
 
-function updateCountdown() {
-  const now = new Date()
-  const diff = weddingDate - now
+  function updateCountdown() {
+    const now = new Date()
+    const diff = weddingDate - now
 
-  const days = Math.max(0, Math.floor(diff / (1000 * 60 * 60 * 24)))
-  const hours = Math.max(0, Math.floor((diff / (1000 * 60 * 60)) % 24))
-  const minutes = Math.max(0, Math.floor((diff / (1000 * 60)) % 60))
+    const days = Math.max(0, Math.floor(diff / (1000 * 60 * 60 * 24)))
+    const hours = Math.max(0, Math.floor((diff / (1000 * 60 * 60)) % 24))
+    const minutes = Math.max(0, Math.floor((diff / (1000 * 60)) % 60))
 
-  document.getElementById('countdown').innerHTML =
-    `${days} dias • ${hours} horas • ${minutes} minutos`
-}
-
-setInterval(updateCountdown, 1000)
-updateCountdown()
-
-function shareWhatsApp() {
-  const text = encodeURIComponent('Veja o site de casamento da Raíssa e José Roberto 💍')
-  const url = encodeURIComponent(window.location.href)
-  window.open(`https://wa.me/?text=${text}%20${url}`, '_blank')
-}
-
-function saveMessage() {
-  const message = document.getElementById('guestMessage').value
-
-  if (!message.trim()) {
-    alert('Escreva uma mensagem antes de enviar.')
-    return
+    document.getElementById('countdown').innerHTML =
+      `${days} dias • ${hours} horas • ${minutes} minutos`
   }
 
-  const text = encodeURIComponent(
-    `Mensagem para Raíssa e José Roberto 💛\n\n${message}`
-  )
+  setInterval(updateCountdown, 1000)
+  updateCountdown()
 
-  window.open(`https://wa.me/5519992532242?text=${text}`, '_blank')
-}
+  function saveMessage() {
+    const message = document.getElementById('guestMessage').value
 
-     <script>
-  const pix = '19992532242'
+    if (!message.trim()) {
+      alert('Escreva uma mensagem antes de enviar.')
+      return
+    }
+
+    const text = encodeURIComponent(
+      `Mensagem para Raíssa e José Roberto 💛\n\n${message}`
+    )
+
+    window.open(`https://wa.me/5519992532242?text=${text}`, '_blank')
+  }
 
   const gifts = [
     {
@@ -327,11 +318,6 @@ function saveMessage() {
     }
   ]
 
-  function copyPix() {
-    navigator.clipboard.writeText(pix)
-    alert('Chave Pix copiada: ' + pix)
-  }
-
   const reserved = JSON.parse(localStorage.getItem('reservedGifts') || '[]')
   const container = document.getElementById('gifts')
 
@@ -360,6 +346,7 @@ function saveMessage() {
         window.open(gift.pixLink, '_blank')
         reserved.push(gift.name)
         localStorage.setItem('reservedGifts', JSON.stringify(reserved))
+
         setTimeout(function () {
           location.reload()
         }, 500)
