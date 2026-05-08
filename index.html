@@ -255,175 +255,119 @@ function saveMessage() {
   window.open(`https://wa.me/5519992532242?text=${text}`, '_blank')
 }
 
-     const gifts = [
-  {
-    name: 'Vale paz no casamento',
-    value: 'R$ 20',
-    image: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80',
-    pixLink: 'https://nubank.com.br/cobrar/4b0ld/69fe5793-8ea1-4803-b47f-b1ccdcaccd24'
-  },
+     <script>
+  const pix = '19992532242'
 
-  {
-    name: 'Pix para o noivo continuar bonito',
-    value: 'R$ 25',
-    image: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=800&q=80',
-    pixLink: 'https://nubank.com.br/cobrar/4b0ld/69fe57f8-db9c-44cc-a50a-c8551ddc975d'
-  },
-
-  {
-    name: 'Pizza da reconciliação',
-    value: 'R$ 50',
-    image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80',
-    pixLink: 'https://nubank.com.br/cobrar/4b0ld/69fe588f-7398-442c-b43d-fe4e09b52b28'
-  },
-
-  {
-    name: 'Sorvete para adoçar a vida de casados',
-    value: 'R$ 60',
-    image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=800&q=80',
-    pixLink: 'https://nubank.com.br/cobrar/4b0ld/69fe5900-06fa-4064-bc7d-4d8739059e11'
-  },
-
-  {
-    name: 'Cinema para continuar namorando',
-    value: 'R$ 80',
-    image: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80',
-    pixLink: 'https://nubank.com.br/cobrar/4b0ld/69fe5944-6351-4345-af13-530abc688b16'
-  },
-
-  {
-    name: 'Ajuda para o sofá dos cochilos',
-    value: 'R$ 100',
-    image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80',
-    pixLink: 'https://nubank.com.br/cobrar/4b0ld/69fe596f-b102-42ec-bb29-c286525e58b9'
-  },
-
-  {
-    name: 'Jantar sem lavar louça',
-    value: 'R$ 150',
-    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80',
-    pixLink: 'https://nubank.com.br/cobrar/4b0ld/69fe599c-8280-4221-afc7-97a57b85e333'
-  },
-
-  {
-    name: 'Mercado da primeira semana',
-    value: 'R$ 200',
-    image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80',
-    pixLink: 'https://nubank.com.br/cobrar/4b0ld/69fe59f0-9f19-4564-af50-4814877f2470'
-  },
-
-  {
-    name: 'Lua de mel sem passar perrengue',
-    value: 'R$ 300',
-    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
-    pixLink: 'https://nubank.com.br/cobrar/4b0ld/69fe59c6-26b0-4625-a665-ec90e0e01aa7'
-  },
-
-  {
-    name: 'Patrocínio oficial do lar dos noivos',
-    value: 'R$ 400',
-    image: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80',
-    pixLink: 'https://nubank.com.br/cobrar/4b0ld/69fe5a20-bede-43d0-b486-d3a828a8313a'
-  },
-
-  {
-    name: 'Presente premium para começar a vida a dois',
-    value: 'R$ 500',
-    image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80',
-    pixLink: 'https://nubank.com.br/cobrar/4b0ld/69fe5a49-31ff-4a2d-b7b7-4aebad97db99'
-  }
-]
-
-    function copyPix() {
-      navigator.clipboard.writeText(pix)
-      alert('Chave Pix copiada: ' + pix)
+  const gifts = [
+    {
+      name: 'Vale paz no casamento',
+      value: 'R$ 20',
+      image: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80',
+      pixLink: 'https://nubank.com.br/cobrar/4b0ld/69fe5793-8ea1-4803-b47f-b1ccdcaccd24'
+    },
+    {
+      name: 'Pix para o noivo continuar bonito',
+      value: 'R$ 25',
+      image: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=800&q=80',
+      pixLink: 'https://nubank.com.br/cobrar/4b0ld/69fe57f8-db9c-44cc-a50a-c8551ddc975d'
+    },
+    {
+      name: 'Pizza da reconciliação',
+      value: 'R$ 50',
+      image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80',
+      pixLink: 'https://nubank.com.br/cobrar/4b0ld/69fe588f-7398-442c-b43d-fe4e09b52b28'
+    },
+    {
+      name: 'Sorvete para adoçar a vida de casados',
+      value: 'R$ 60',
+      image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=800&q=80',
+      pixLink: 'https://nubank.com.br/cobrar/4b0ld/69fe5900-06fa-4064-bc7d-4d8739059e11'
+    },
+    {
+      name: 'Cinema para continuar namorando',
+      value: 'R$ 80',
+      image: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80',
+      pixLink: 'https://nubank.com.br/cobrar/4b0ld/69fe5944-6351-4345-af13-530abc688b16'
+    },
+    {
+      name: 'Ajuda para o sofá dos cochilos',
+      value: 'R$ 100',
+      image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80',
+      pixLink: 'https://nubank.com.br/cobrar/4b0ld/69fe596f-b102-42ec-bb29-c286525e58b9'
+    },
+    {
+      name: 'Jantar sem lavar louça',
+      value: 'R$ 150',
+      image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80',
+      pixLink: 'https://nubank.com.br/cobrar/4b0ld/69fe599c-8280-4221-afc7-97a57b85e333'
+    },
+    {
+      name: 'Mercado da primeira semana',
+      value: 'R$ 200',
+      image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80',
+      pixLink: 'https://nubank.com.br/cobrar/4b0ld/69fe59f0-9f19-4564-af50-4814877f2470'
+    },
+    {
+      name: 'Lua de mel sem passar perrengue',
+      value: 'R$ 300',
+      image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+      pixLink: 'https://nubank.com.br/cobrar/4b0ld/69fe59c6-26b0-4625-a665-ec90e0e01aa7'
+    },
+    {
+      name: 'Patrocínio oficial do lar dos noivos',
+      value: 'R$ 400',
+      image: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80',
+      pixLink: 'https://nubank.com.br/cobrar/4b0ld/69fe5a20-bede-43d0-b486-d3a828a8313a'
+    },
+    {
+      name: 'Presente premium para começar a vida a dois',
+      value: 'R$ 500',
+      image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80',
+      pixLink: 'https://nubank.com.br/cobrar/4b0ld/69fe5a49-31ff-4a2d-b7b7-4aebad97db99'
     }
+  ]
 
-    const reserved = JSON.parse(localStorage.getItem('reservedGifts') || '[]')
-    const container = document.getElementById('gifts')
-function formatField(id, value) {
-  const size = String(value.length).padStart(2, '0')
-  return id + size + value
-}
-
-function crc16(payload) {
-  let crc = 0xffff
-  for (let i = 0; i < payload.length; i++) {
-    crc ^= payload.charCodeAt(i) << 8
-    for (let j = 0; j < 8; j++) {
-      crc = (crc & 0x8000) ? (crc << 1) ^ 0x1021 : crc << 1
-      crc &= 0xffff
-    }
+  function copyPix() {
+    navigator.clipboard.writeText(pix)
+    alert('Chave Pix copiada: ' + pix)
   }
-  return crc.toString(16).toUpperCase().padStart(4, '0')
-}
 
-function generatePixCode(amount) {
-  const pixKey = '19992532242'
-  const merchantName = 'RAISSA E JOSE'
-  const merchantCity = 'HORTOLANDIA'
-  const txid = 'CASAMENTO'
+  const reserved = JSON.parse(localStorage.getItem('reservedGifts') || '[]')
+  const container = document.getElementById('gifts')
 
-  const gui = formatField('00', 'br.gov.bcb.pix')
-  const key = formatField('01', pixKey)
-  const merchantAccount = formatField('26', gui + key)
+  gifts.forEach(function (gift) {
+    const isReserved = reserved.includes(gift.name)
+    const card = document.createElement('div')
+    card.className = 'gift'
 
-  let payload =
-    formatField('00', '01') +
-    merchantAccount +
-    formatField('52', '0000') +
-    formatField('53', '986') +
-    formatField('54', amount) +
-    formatField('58', 'BR') +
-    formatField('59', merchantName.substring(0, 25)) +
-    formatField('60', merchantCity.substring(0, 15)) +
-    formatField('62', formatField('05', txid))
+    card.innerHTML = `
+      <img src="${gift.image}" alt="${gift.name}">
+      <div class="gift-content">
+        <h3>${gift.name}</h3>
+        <p style="font-size:24px;font-weight:bold;">${gift.value}</p>
+        ${
+          isReserved
+            ? '<div class="unavailable">Indisponível</div>'
+            : '<button class="gift-button">Presentear via Pix</button>'
+        }
+      </div>
+    `
 
-  payload += '6304'
-  return payload + crc16(payload)
-}
-    gifts.forEach(({ name, value, image, pixLink }) => {
-      const isReserved = reserved.includes(name)
-      const card = document.createElement('div')
-      card.className = 'gift'
+    const button = card.querySelector('.gift-button')
 
-      card.innerHTML = `
-        <img src="${image}" alt="${name}">
-        <div class="gift-content">
-          <h3>${name}</h3>
-          <p style="font-size:24px;font-weight:bold;">${value}</p>
-          ${
-            isReserved
-              ? '<div class="unavailable">Indisponível</div>'
-              : <button onclick="window.open('${pixLink}', '_blank')">
-  Presentear via Pix
-</button>
-          }
-        </div>
-      `
-
-      const button = card.querySelector('button')
-      if (button) {
-        button.onclick = () => {
-  const amount = value.replace('R$ ', '').replace(',', '.')
-  const pixCode = generatePixCode(amount)
-
-  alert(
-    'Presente: ' + name +
-    '\nValor: ' + value +
-    '\n\nCódigo Pix copia e cola:\n' + pixCode
-  )
-
-  navigator.clipboard.writeText(pixCode)
-
-  reserved.push(name)
-  localStorage.setItem('reservedGifts', JSON.stringify(reserved))
-  location.reload()
-}
+    if (button) {
+      button.onclick = function () {
+        window.open(gift.pixLink, '_blank')
+        reserved.push(gift.name)
+        localStorage.setItem('reservedGifts', JSON.stringify(reserved))
+        setTimeout(function () {
+          location.reload()
+        }, 500)
       }
+    }
 
-      container.appendChild(card)
-    })
-  </script>
+    container.appendChild(card)
+  })
+</script>
 </body>
 </html>
