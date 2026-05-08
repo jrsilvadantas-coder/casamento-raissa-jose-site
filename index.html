@@ -4,62 +4,196 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Raíssa & José Roberto</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #fff7ed, #f8fafc);
+      color: #1e293b;
+    }
+
+    main {
+      max-width: 1150px;
+      margin: auto;
+      padding: 24px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 12px 35px rgba(0,0,0,.08);
+      animation: fadeUp .8s ease;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin: 0;
+    }
+
+    h2 {
+      margin-top: 44px;
+      font-size: 32px;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+
+    .photo {
+      height: 310px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.08);
+      transition: .3s;
+    }
+
+    .photo:hover {
+      transform: translateY(-6px) scale(1.02);
+    }
+
+    .gift {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 5px 18px rgba(0,0,0,.06);
+      transition: .3s;
+    }
+
+    .gift:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 30px rgba(0,0,0,.10);
+    }
+
+    .gift img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+    }
+
+    .gift-content {
+      padding: 20px;
+    }
+
+    button, a.button {
+      display: inline-block;
+      padding: 13px 18px;
+      border-radius: 16px;
+      border: 1px solid #cbd5e1;
+      background: white;
+      color: #1e293b;
+      cursor: pointer;
+      text-decoration: none;
+      transition: .25s;
+    }
+
+    button:hover, a.button:hover {
+      background: #1e293b;
+      color: white;
+    }
+
+    .unavailable {
+      padding: 13px;
+      border-radius: 16px;
+      background: #e2e8f0;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 700px) {
+      h1 { font-size: 36px; }
+      .hero-img { height: 430px; }
+    }
+  </style>
 </head>
-<body style="margin:0;font-family:Arial,sans-serif;background:#f8fafc;color:#0f172a;">
-  <main style="max-width:1100px;margin:auto;padding:24px;">
-    <section style="background:white;border-radius:28px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.08);">
-      <img src="/foto-casal.jpg" style="width:100%;height:520px;object-fit:cover;" />
+
+<body>
+  <main>
+    <section class="card">
+      <img src="/foto-casal.jpg" class="hero-img" alt="Raíssa e José Roberto">
+
       <div style="padding:32px;">
-        <p style="color:#64748b;letter-spacing:4px;">01 • 08 • 2026</p>
-        <h1 style="font-size:44px;margin:0;">Raíssa & José Roberto</h1>
-        <p style="font-size:18px;line-height:1.6;color:#475569;">
-          O amor transforma dias comuns em eternidade. Estamos construindo nosso lar e ficaremos felizes em compartilhar esse começo com você.
+        <p style="color:#b45309;letter-spacing:4px;font-weight:bold;">01 • 08 • 2026</p>
+        <h1>Raíssa & José Roberto</h1>
+
+        <p style="font-size:18px;line-height:1.7;color:#475569;">
+          O amor transforma dias comuns em eternidade. Estamos construindo nosso lar
+          e ficaremos felizes em compartilhar esse começo com você.
         </p>
-        <button onclick="copyPix()" style="padding:14px 22px;border-radius:16px;border:1px solid #cbd5e1;background:white;cursor:pointer;">
-          Copiar chave Pix
-        </button>
+
+        <button onclick="copyPix()">Copiar chave Pix</button>
       </div>
     </section>
 
-    <h2 style="margin-top:40px;">Nossa história em fotos</h2>
-    <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
-      <img src="/foto-casal-2.jpg" style="height:300px;width:100%;object-fit:cover;border-radius:22px;" />
-      <img src="/foto-casal-3.jpg" style="height:300px;width:100%;object-fit:cover;border-radius:22px;" />
-      <img src="/foto-casal-4.jpg" style="height:300px;width:100%;object-fit:cover;border-radius:22px;" />
+    <h2>Nossa história em fotos</h2>
+    <section class="section-grid">
+      <img src="/foto-casal-2.jpg" class="photo" alt="Foto do casal">
+      <img src="/foto-casal-3.jpg" class="photo" alt="Foto do casal">
+      <img src="/foto-casal-4.jpg" class="photo" alt="Foto do casal">
     </section>
 
-    <h2 style="margin-top:40px;">Locais</h2>
-    <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;">
-      <div style="background:white;padding:24px;border-radius:22px;">
-        <h3>Cerimônia religiosa</h3>
-        <p>R. Eusébio de Queiroz, 229 - Jardim Amanda I, Hortolândia - SP, 13188-002</p>
-        <a href="https://maps.google.com/?q=R. Eusébio de Queiroz, 229 - Jardim Amanda I, Hortolândia - SP, 13188-002" target="_blank">Ver rota</a>
+    <h2>Locais</h2>
+    <section class="section-grid">
+      <div class="gift">
+        <div class="gift-content">
+          <h3>Cerimônia religiosa</h3>
+          <p>R. Eusébio de Queiroz, 229 - Jardim Amanda I, Hortolândia - SP</p>
+          <a class="button" target="_blank" href="https://maps.google.com/?q=R. Eusébio de Queiroz, 229 - Jardim Amanda I, Hortolândia - SP">
+            Ver rota
+          </a>
+        </div>
       </div>
-      <div style="background:white;padding:24px;border-radius:22px;">
-        <h3>Recepção</h3>
-        <p>Rua dos Melros, 155 Chácara Recreio Alvorada - Hortolândia - SP, 13183-761</p>
-        <a href="https://maps.google.com/?q=Rua dos Melros, 155 Chácara Recreio Alvorada, Hortolândia - SP" target="_blank">Ver rota</a>
+
+      <div class="gift">
+        <div class="gift-content">
+          <h3>Recepção</h3>
+          <p>Rua dos Melros, 155 - Chácaras Recreio Alvorada, Hortolândia - SP</p>
+          <a class="button" target="_blank" href="https://maps.google.com/?q=Rua dos Melros, 155, Hortolândia - SP">
+            Ver rota
+          </a>
+        </div>
       </div>
     </section>
 
-    <h2 style="margin-top:40px;">Lista de presentes divertida</h2>
-    <section id="gifts" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;"></section>
+    <h2>Lista de presentes divertida</h2>
+    <section id="gifts" class="section-grid"></section>
   </main>
 
   <script>
     const pix = '19992532242'
 
     const gifts = [
-      ['Café para sobreviver aos primeiros dias', 'R$ 20'],
-      ['Um mês de corte de cabelo do noivo', 'R$ 25'],
-      ['Vale para a noiva não brigar com o noivo', 'R$ 30'],
-      ['Vale para o noivo ter razão por um dia', 'R$ 35'],
-      ['Pizza do sábado à noite', 'R$ 45'],
-      ['Sorvete de domingo', 'R$ 50'],
-      ['Cinema para continuar namorando casados', 'R$ 80'],
-      ['Jantar sem lavar louça', 'R$ 150'],
-      ['Ajuda para a lua de mel', 'R$ 300'],
-      ['Presente premium para começar o lar', 'R$ 500']
+      ['Café para sobreviver aos primeiros dias', 'R$ 20', 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80'],
+      ['Um mês de corte de cabelo do noivo', 'R$ 25', 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=800&q=80'],
+      ['Vale para a noiva não brigar com o noivo', 'R$ 30', 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80'],
+      ['Vale para o noivo ter razão por um dia', 'R$ 35', 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80'],
+      ['Pizza do sábado à noite', 'R$ 45', 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80'],
+      ['Sorvete de domingo', 'R$ 50', 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=800&q=80'],
+      ['Cinema para continuar namorando casados', 'R$ 80', 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80'],
+      ['Jantar sem lavar louça', 'R$ 150', 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80'],
+      ['Ajuda para a lua de mel', 'R$ 300', 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80'],
+      ['Presente premium para começar o lar', 'R$ 500', 'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80']
     ]
 
     function copyPix() {
@@ -70,19 +204,22 @@
     const reserved = JSON.parse(localStorage.getItem('reservedGifts') || '[]')
     const container = document.getElementById('gifts')
 
-    gifts.forEach(([name, value]) => {
+    gifts.forEach(([name, value, image]) => {
       const isReserved = reserved.includes(name)
       const card = document.createElement('div')
-      card.style = 'background:white;padding:22px;border-radius:22px;box-shadow:0 4px 14px rgba(0,0,0,.04);'
+      card.className = 'gift'
 
       card.innerHTML = `
-        <h3>${name}</h3>
-        <p style="font-size:24px;font-weight:bold;">${value}</p>
-        ${
-          isReserved
-            ? '<div style="padding:12px;border-radius:14px;background:#e2e8f0;text-align:center;">Indisponível</div>'
-            : '<button style="width:100%;padding:13px;border-radius:14px;border:1px solid #cbd5e1;background:white;cursor:pointer;">Presentear via Pix</button>'
-        }
+        <img src="${image}" alt="${name}">
+        <div class="gift-content">
+          <h3>${name}</h3>
+          <p style="font-size:24px;font-weight:bold;">${value}</p>
+          ${
+            isReserved
+              ? '<div class="unavailable">Indisponível</div>'
+              : '<button>Presentear via Pix</button>'
+          }
+        </div>
       `
 
       const button = card.querySelector('button')
